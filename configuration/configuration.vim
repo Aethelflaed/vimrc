@@ -32,8 +32,8 @@ set number
 " Show the cursor position all the time
 set ruler
 
-" Make sure auto settings are enabled
-"set modeline
+" Make sure auto settings are disabled
+set nomodeline
 
 " Horizontal scroll if line is too long
 set nowrap
