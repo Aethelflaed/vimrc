@@ -53,30 +53,10 @@ augroup modeline_guard
 				\ endif
 augroup END
 
-augroup last_change
+augroup lcd
 	autocmd!
 
-	autocmd BufWritePre *
-				\ if search('Last Change:', 'w')								|
-				\	let s:answer = input('Update "Last Change" [y/n]? ')		|
-				\	while s:answer != 'y' && s:answer != 'n'					|
-				\		let s:answer = input('Answer by "y" or "n" ')			|
-				\	endwhile													|
-				\	if s:answer == 'y'											|
-				\		let s:date = system('date "+%B %d %Y"')					|
-				\		let s:date = substitute(s:date, '\n', '', '')			|
-				\		let s:date = 'Last Change:	' . s:date					|
-				\		let s:pattern = 'Last Change:\s\+'						|
-				\		let s:pattern = s:pattern . '[a-zA-Z]\+ [0-9]\{1,2\} '	|
-				\		let s:pattern = s:pattern . '[0-9]\{1,4\}'				|
-				\		let s:command = '%s/' . s:pattern . '/' . s:date . '/g' |
-				\		execute s:command										|
-				\		unlet s:date											|
-				\		unlet s:pattern											|
-				\		unlet s:command											|
-				\	endif														|
-				\	unlet s:answer												|
-				\ endif
+	autocmd BufWritePre * call lcd#update()
 augroup END
 
 let g:loaded_autocmds = 1
