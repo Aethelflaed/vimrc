@@ -21,9 +21,13 @@ endif
 set backup
 
 " Check backup & swap directories
-let s:backup_dir = g:base_dir . '/backup'
-let s:swap_dir = g:base_dir . '/swap'
+let s:base = $HOME . '/.vim'
+let s:backup_dir = s:base . '/backup'
+let s:swap_dir = s:base . '/swap'
 let g:trust_dir = g:base_dir . '/trust'
+if finddir(s:base) == ''
+	silent call mkdir(s:base)
+endif
 if finddir(g:base_dir) == ''
     silent call mkdir(g:base_dir)
 endif
