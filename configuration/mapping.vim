@@ -18,7 +18,7 @@ endif
 " -----------------------------------------------------------------------------
 
 " Set <leader>
-let mapleader = "@"
+let mapleader = '`'
 
 " Activate / deactivate search highlighting
 nmap <silent> <leader>n :set nohlsearch<CR>
