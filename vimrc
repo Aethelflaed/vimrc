@@ -19,6 +19,9 @@ if has("mouse")
 	behave xterm
 endif
 
+" Enable file type detection and custom settings
+filetype plugin indent on
+
 " If vim was compiled with autocommands support
 if has("autocmd")
 	source <sfile>:h/configuration/autocmds.vim

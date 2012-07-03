@@ -17,9 +17,6 @@ if exists("g:loaded_autocmds")
 endif
 " -----------------------------------------------------------------------------
 
-" Enable file type detection and custom settings
-filetype plugin indent on
-
 augroup jump_to_last_position
 	autocmd!
 	" When editing a file, always jump to the last known cursor position.
