@@ -4,7 +4,7 @@
 "
 " Description:	User defined auto commands
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	July 04 2012
+" Last Change:	August 09 2012
 
 " -----------------------------------------------------------------------------
 " Load guard
@@ -42,6 +42,7 @@ augroup text
 
 	autocmd FileType txt set spell spelllang=en_us
 	autocmd FileType tex set spell spelllang=en_us
+	autocmd FileType markdown set spell spelllang=en_us
 augroup END
 
 augroup modeline_guard
