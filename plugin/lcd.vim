@@ -4,7 +4,7 @@
 "
 " Description:	Auto update "Last Change"
 " Author:		Geoffroy Planquart <geoffroy@aethelflaed.com>
-" Last Change:	July 04 2012
+" Last Change:	August 09 2012
 
 " -----------------------------------------------------------------------------
 " Load guard
@@ -24,9 +24,11 @@ function lcd#update()
 		let s:date = substitute(system(s:format), '\n', '', '')
 		let s:cur_date = matchstr(getline(s:line), g:lcd_pattern)
 		if s:date != s:cur_date
-			let s:answer = input('Update "Last Change"? [y/n] ')
+			echo 'Update "Last Change"? [y/n]'
+			let s:answer = nr2char(getchar())
 			while s:answer != 'y' && s:answer != 'n'
-				let s:answer = input('Last Change: answer by "y" or "n" ')
+				echo 'Last Change: answer by "y" or "n" '
+				let s:answer = nr2char(getchar())
 			endwhile
 			if s:answer == 'y'
 				let s:date = 'Last Change:	' . s:date
