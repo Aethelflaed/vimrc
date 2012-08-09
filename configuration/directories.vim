@@ -1,18 +1,18 @@
 " -----------------------------------------------------------------------------
-" --- Backup configuration
+" --- Directories configuration
 " -----------------------------------------------------------------------------
 "
-" Description:	Backup configuration and initialization
+" Description:	Directories configuration and initialization
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 19 2011
+" Last Change:	August 09 2012
 
 " -----------------------------------------------------------------------------
 " Load guard
 if v:version != 703
-	echoerr "File backup.vim has not been tested on this version (" . v:version . ")"
+	echoerr "File directories.vim has not been tested on this version (" . v:version . ")"
 endif
 " Prevents file from being included more than once
-if exists("g:loaded_backup")
+if exists("g:loaded_directories")
 	finish
 endif
 " -----------------------------------------------------------------------------
@@ -25,6 +25,8 @@ let s:base = $HOME . '/.vim'
 let s:backup_dir = s:base . '/backup'
 let s:swap_dir = s:base . '/swap'
 let g:trust_dir = g:base_dir . '/trust'
+let g:skeletons_dir = g:base_dir . '/skeletons'
+
 if finddir(s:base) == ''
 	silent call mkdir(s:base)
 endif
@@ -40,6 +42,9 @@ endif
 if finddir(g:trust_dir) == ''
 	silent call mkdir (g:trust_dir)
 endif
+if finddir(g:skeletons_dir) == ''
+	silent call mkdir (g:skeletons_dir)
+endif
 
 " Configure backup directory
 set backupdir=$HOME/.vim/backup
@@ -50,5 +55,5 @@ set directory=$HOME/.vim/swap
 unlet s:backup_dir
 unlet s:swap_dir
 
-let g:loaded_backup = 1
+let g:loaded_directories = 1
 

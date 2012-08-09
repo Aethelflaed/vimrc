@@ -7,7 +7,7 @@ set termencoding=utf-8
 let g:base_dir = expand("<sfile>:h")
 
 " Configure backup
-source <sfile>:h/configuration/backup.vim
+source <sfile>:h/configuration/directories.vim
 
 " Load TUI colors customization
 source <sfile>:h/configuration/tui_colors.vim
