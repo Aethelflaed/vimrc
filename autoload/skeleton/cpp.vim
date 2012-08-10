@@ -7,7 +7,7 @@
 " Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File cpp.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:skeleton_cpp_loaded")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 function! skeleton#cpp#load()

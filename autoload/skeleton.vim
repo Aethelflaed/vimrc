@@ -7,7 +7,7 @@
 " Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File skeleton.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,11 +15,33 @@ endif
 if exists("g:skeleton_loaded")
 	finish
 endif
+" }}}1
 " -----------------------------------------------------------------------------
+
+" CONFIGURATION {{{1
 
 if !exists('g:skeleton_author')
 	let g:skeleton_author = ''
 endif
+
+" }}}1
+
+function! skeleton#load()
+	let type = &ft
+	let name = expand('%')
+	let ext = expand('%:e')
+
+	let file = g:skeletons_dir . '/skeleton.' . type
+
+	execute 'runtime! autoload/skeleton/' . type . '.vim'
+	if exists('*skeleton#' . type . '#load')
+		execute 'call skeleton#' . type . '#load()'
+	else
+		call skeleton#read(file)
+	endif
+endfunction
+
+" GLOBAL FUNCTIONS {{{1
 
 function! skeleton#replace(text, repl, flag)
 	let pos = [1, 1]
@@ -76,20 +98,7 @@ function! skeleton#read(file)
 	endif
 endfunction
 
-function! skeleton#load()
-	let type = &ft
-	let name = expand('%')
-	let ext = expand('%:e')
-
-	let file = g:skeletons_dir . '/skeleton.' . type
-
-	execute 'runtime! autoload/skeleton/' . type . '.vim'
-	if exists('*skeleton#' . type . '#load')
-		execute 'call skeleton#' . type . '#load()'
-	else
-		call skeleton#read(file)
-	endif
-endfunction
+" }}}
 
 let g:skeleton_loaded = 1
 
