@@ -21,9 +21,6 @@ if !exists('g:skeleton_author')
 	let g:skeleton_author = ''
 endif
 
-let g:skeleton_c_main = 'main.c'
-let g:skeleton_cpp_main = 'main.cpp'
-
 function! skeleton#replace(text, repl, flag)
 	let pos = [1, 1]
 	call cursor(1, 1)
