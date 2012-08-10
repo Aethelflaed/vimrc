@@ -60,5 +60,11 @@ augroup lcd
 	autocmd BufWritePre * call lcd#update()
 augroup END
 
+augroup skeleton
+	autocmd!
+
+	autocmd BufNewFile * call skeleton#load()
+augroup END
+
 let g:loaded_autocmds = 1
 
