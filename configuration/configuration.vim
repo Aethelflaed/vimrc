@@ -40,6 +40,7 @@ set ruler
 
 " Make sure auto settings are disabled
 set nomodeline
+set modelines=2
 
 " Horizontal scroll if line is too long
 set nowrap

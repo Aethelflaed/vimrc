@@ -49,8 +49,8 @@ augroup modeline_guard
 	autocmd!
 	
 	autocmd BufReadPre *
-				\ if findfile(g:trust_dir . expand("%:p")) != ''	|
-				\	set modeline									|
+				\ if findfile(g:trust_dir . expand('%:p')) != ''	|
+				\	setlocal modeline								|
 				\ endif
 augroup END
 
