@@ -1,2 +1,1 @@
-au BufRead,BufNewFile *.ypp set filetype=yacc
-
+autocmd BufRead,BufNewFile *.ypp set filetype=yacc
