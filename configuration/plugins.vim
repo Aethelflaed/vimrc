@@ -21,6 +21,8 @@ endif
 let g:skeleton_author = 'Geoffroy Planquart <geoffroy@aethelflaed.com>'
 call skeleton#enable()
 
+call lcd#enable()
+
 let g:loaded_plugins = 1
 
 " vim: set fdm=marker:

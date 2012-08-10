@@ -55,12 +55,6 @@ augroup modeline_guard " {{{1
 				\ endif
 augroup END " }}}
 
-augroup lcd " {{{1
-	autocmd!
-
-	autocmd BufWritePre * call lcd#update()
-augroup END " }}}
-
 let g:loaded_autocmds = 1
 
 " vim: set fdm=marker:

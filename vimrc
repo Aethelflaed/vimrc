@@ -1,3 +1,23 @@
+" -----------------------------------------------------------------------------
+" --- Central configuration
+" -----------------------------------------------------------------------------
+"
+" Description:	Central configuration of vim, loaded from .vimrc
+" Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
+" Last Change:	August 10 2012
+
+" -----------------------------------------------------------------------------
+" LOAD GUARD {{{1
+if v:version != 703
+	echoerr "File vimrc has not been tested on this version (" . v:version . ")"
+endif
+" Prevents file from being included more than once
+if exists("g:loaded_vimrc")
+	finish
+endif
+" }}}
+" -----------------------------------------------------------------------------
+
 set nocompatible	" Disable VI compatibility
 
 " Set encoding to utf-8
@@ -54,4 +74,7 @@ source <sfile>:h/configuration/plugins.vim
 " see matchit plugin in marco under $VIMRUNTIME
 " see Q_sc
 " see text-objects
-"
+
+let g:loaded_vimrc = 1
+
+" vim: set fdm=marker:

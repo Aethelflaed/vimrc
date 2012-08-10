@@ -25,36 +25,42 @@ let g:lcd_pattern = "[a-zA-Z]\\+ [0-9]\\{1,2\\} [0-9]\\{4\\}"
 
 " }}}
 
-function lcd#update()
-	let s:line = search('Last Change:', 'wnb')
-	if s:line > 0
-		let s:format = 'date "+' . g:lcd_format . '"'
-		let s:date = substitute(system(s:format), '\n', '', '')
-		let s:cur_date = matchstr(getline(s:line), g:lcd_pattern)
-		if s:date != s:cur_date
+function! lcd#enable()
+	call lcd#disable()
+
+	augroup lcd
+		autocmd!
+
+		autocmd BufWritePre * call lcd#update()
+	augroup END
+endfunction
+
+function! lcd#disable()
+	augroup lcd
+		autocmd!
+	augroup END
+endfunction
+
+function! lcd#update()
+	let line = search('Last Change:', 'wnb')
+	if line > 0
+		let date = strftime(g:lcd_format)
+		let cur_date = matchstr(getline(line), g:lcd_pattern)
+		if date != cur_date
 			echo 'Update "Last Change"? [y/n]'
-			let s:answer = nr2char(getchar())
-			while s:answer != 'y' && s:answer != 'n'
+			let answer = nr2char(getchar())
+			while answer != 'y' && answer != 'n'
 				echo 'Last Change: answer by "y" or "n" '
-				let s:answer = nr2char(getchar())
+				let answer = nr2char(getchar())
 			endwhile
-			if s:answer == 'y'
-				let s:date = 'Last Change:	' . s:date
-				let s:command = '%s/Last Change:\s*' . g:lcd_pattern
-				let s:command = s:command . '/' . s:date . '/g'
-				let s:pos = getpos('.')
-				execute s:command
-				call setpos('.', s:pos)
-				unlet s:pos
-				unlet s:command
+			if answer == 'y'
+				let pos = getpos('.')
+				execute '%s/Last Change:\s*' . g:lcd_pattern .
+							\ '/Last Change:	' . date . '/g'
+				call setpos('.', pos)
 			endif
-			unlet s:answer
 		endif
-		unlet s:format
-		unlet s:date
-		unlet s:cur_date
 	endif
-	unlet s:line
 endfunction
 
 let g:lcd_loaded = 1
