@@ -71,7 +71,7 @@ endfunction
 function! skeleton#read(file)
 	if findfile(a:file) != ''
 		try
-			execute '0r ' . a:file
+			silent execute '0r ' . a:file
 			call skeleton#template()
 		catch /.*/
 			return
