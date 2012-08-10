@@ -50,6 +50,11 @@ function! skeleton#FILENAME(default)
 endfunction
 
 function! skeleton#template()
+	let type = &filetype
+	if exists('*skeleton#' . type . '#template')
+		execute 'call skeleton#' . type . '#template()'
+	endif
+
 	call skeleton#replace('${author}', g:skeleton_author, 'g')
 	call skeleton#replace('${datetime}', strftime('%Y/%m/%d %H:%M:%S'), 'g')
 	call skeleton#replace('${date}', strftime('%B %d %Y'), 'g')
