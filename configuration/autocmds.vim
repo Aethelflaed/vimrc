@@ -65,6 +65,7 @@ augroup skeleton " {{{1
 	autocmd!
 
 	autocmd BufNewFIle *.h set filetype=c
+	autocmd BufNewFIle *.tex set filetype=tex
 	autocmd BufNewFile * call skeleton#load()
 augroup END " }}}
 
