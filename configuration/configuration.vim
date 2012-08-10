@@ -4,7 +4,7 @@
 "
 " Description:	Global configuration of vim
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 19 2011
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
 " Load guard
@@ -19,6 +19,12 @@ endif
 
 " Set runtimepath to include other configuration
 set runtimepath=$HOME/.vim,$HOME/.vim/ruby,$HOME/.vim/treetop,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+
+" -----------------------------------------------------------------------------
+" Identity
+" -----------------------------------------------------------------------------
+
+let g:skeleton_author = 'Geoffroy Planquart <geoffroy@aethelflaed.com>'
 
 " -----------------------------------------------------------------------------
 " Editor

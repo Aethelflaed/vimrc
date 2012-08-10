@@ -21,10 +21,6 @@ if !exists('g:skeleton_author')
 	let g:skeleton_author = ''
 endif
 
-if !exists('g:skeleton_copyright')
-	let g:skeleton_copyright = ''
-endif
-
 let g:skeleton_c_main = 'main.c'
 let g:skeleton_cpp_main = 'main.cpp'
 
@@ -57,13 +53,12 @@ function! skeleton#FILENAME(default)
 endfunction
 
 function! skeleton#template()
+	call skeleton#replace('${author}', g:skeleton_author, 'g')
 	call skeleton#replace('${datetime}', strftime('%Y/%m/%d %H:%M:%S'), 'g')
 	call skeleton#replace('${date}', strftime('%B %d %Y'), 'g')
 	call skeleton#replace('${FILENAME}', skeleton#FILENAME('UNKNOWN'), 'g')
 	call skeleton#replace('${Filename}', skeleton#Filename('Unknown'), 'g')
 	call skeleton#replace('${filename}', skeleton#filename('unknown'), 'g')
-	call skeleton#replace('${author}', g:skeleton_author, 'g')
-	call skeleton#replace('${copyright}', g:skeleton_copyright, 'g')
 	let cur = skeleton#replace('${cursor}', '', '')
 	call setpos('.', [0, cur[0], cur[1]])
 endfunction
