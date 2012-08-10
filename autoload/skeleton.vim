@@ -24,10 +24,18 @@ if !exists('g:skeleton_author')
 	let g:skeleton_author = ''
 endif
 
+if !exists('g:skeleton_dir')
+	let g:skeleton_dir = $HOME . '/.vim/skeletons'
+endif
+
 " }}}1
 
 function! skeleton#enable()
 	call skeleton#disable()
+
+	if finddir(g:skeleton_dir) == ''
+		silent call mkdir(g:skeleton_dir, 'p')
+	endif
 
 	augroup skeleton
 		autocmd!
@@ -105,7 +113,7 @@ function! skeleton#template()
 endfunction
 
 function! skeleton#read(file)
-	let file = g:skeletons_dir . '/' . a:file
+	let file = g:skeleton_dir . '/' . a:file
 	if findfile(file) != ''
 		try
 			silent execute '0r ' . file

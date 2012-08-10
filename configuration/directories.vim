@@ -24,21 +24,14 @@ set backup
 " Check backup & swap directories
 let s:backup_dir = g:base_dir . '/backup'
 let s:swap_dir = g:base_dir . '/swap'
-let g:skeletons_dir = g:base_dir . '/skeletons'
 
 " Check directories {{{1
 
-if finddir(g:base_dir) == ''
-    silent call mkdir(g:base_dir)
-endif
 if finddir(s:backup_dir) == ''
-    silent call mkdir(s:backup_dir)
+    silent call mkdir(s:backup_dir, 'p')
 endif
 if finddir(s:swap_dir) == ''
-    silent call mkdir(s:swap_dir)
-endif
-if finddir(g:skeletons_dir) == ''
-	silent call mkdir (g:skeletons_dir)
+    silent call mkdir(s:swap_dir, 'p')
 endif
 
 " }}}

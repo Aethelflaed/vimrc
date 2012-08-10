@@ -19,6 +19,7 @@ endif
 " -----------------------------------------------------------------------------
 
 let g:skeleton_author = 'Geoffroy Planquart <geoffroy@aethelflaed.com>'
+let g:skeleton_dir = g:base_dir . '/skeletons'
 call skeleton#enable()
 
 call lcd#enable()
