@@ -78,9 +78,15 @@ function! skeleton#load()
 	execute 'runtime! autoload/skeleton/' . type . '.vim'
 	if exists('*skeleton#' . type . '#load')
 		execute 'call skeleton#c#load()'
-	elseif findfile(file) != ''
+	else
+		call skeleton#read(file)
+	endif
+endfunction
+
+function! skeleton#read(file)
+	if findfile(a:file) != ''
 		try
-			exec '0r ' . file
+			execute '0r ' . a:file
 			call skeleton#template()
 		catch /.*/
 			return
