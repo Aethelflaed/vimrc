@@ -27,6 +27,21 @@ function! skeleton#cpp#load()
 		let file .= 'main.cpp'
 	else
 		let file .= 'skeleton.' . ext
+		if ext == 'cpp'
+			let cmdheight = &cmdheight
+			setlocal cmdheight=2
+			echo 'Open header file (' . name . '.hpp)? [y/n] '
+			if nr2char(getchar()) == 'y'
+				call skeleton#read(file)
+				setlocal nomodified
+				silent execute ':vsp ' . name . '.hpp'
+				call skeleton#cpp#load()
+				set ft=cpp
+				let &cmdheight = cmdheight
+				return
+			endif
+			let &cmdheight = cmdheight
+		endif
 	endif
 	call skeleton#read(file)
 endfunction
