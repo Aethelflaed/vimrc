@@ -22,7 +22,7 @@ function! skeleton#cpp#load()
 	let name = expand('%:t:r')
 	let ext = expand('%:e')
 
-	let file = g:skeletons_dir . '/cpp/'
+	let file = 'cpp/'
 
 	if name == 'main' && ext == 'cpp'
 		let file .= 'main.cpp'

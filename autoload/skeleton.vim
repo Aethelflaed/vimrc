@@ -31,7 +31,7 @@ function! skeleton#load()
 	let name = expand('%')
 	let ext = expand('%:e')
 
-	let file = g:skeletons_dir . '/skeleton.' . type
+	let file = 'skeleton.' . type
 
 	execute 'runtime! autoload/skeleton/' . type . '.vim'
 	if exists('*skeleton#' . type . '#load')
@@ -88,9 +88,10 @@ function! skeleton#template()
 endfunction
 
 function! skeleton#read(file)
-	if findfile(a:file) != ''
+	let file = g:skeletons_dir . '/' . a:file
+	if findfile(file) != ''
 		try
-			silent execute '0r ' . a:file
+			silent execute '0r ' . file
 			call skeleton#template()
 		catch /.*/
 			return

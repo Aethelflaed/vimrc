@@ -22,7 +22,7 @@ function! skeleton#c#load()
 	let name = expand('%:t:r')
 	let ext = expand('%:e')
 
-	let file = g:skeletons_dir . '/c/'
+	let file = 'c/'
 
 	if name == 'main' && ext == 'c'
 		let file .= 'main.c'
