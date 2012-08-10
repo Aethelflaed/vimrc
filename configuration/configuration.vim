@@ -7,7 +7,7 @@
 " Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File configuration.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:loaded_configuration")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 " Set runtimepath to include other configuration
@@ -124,3 +125,4 @@ set conceallevel=1
 
 let g:loaded_configuration = 1
 
+" vim: set fdm=marker:

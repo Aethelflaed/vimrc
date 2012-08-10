@@ -4,10 +4,10 @@
 "
 " Description:	Auto update "Last Change"
 " Author:		Geoffroy Planquart <geoffroy@aethelflaed.com>
-" Last Change:	August 09 2012
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File autocmds.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,7 +15,15 @@ endif
 if exists("g:lcd_loaded")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
+
+" CONFIGURATION {{{1
+
+let g:lcd_format = "%B %d %Y"
+let g:lcd_pattern = "[a-zA-Z]\\+ [0-9]\\{1,2\\} [0-9]\\{4\\}"
+
+" }}}
 
 function lcd#update()
 	let s:line = search('Last Change:', 'wnb')
@@ -48,9 +56,6 @@ function lcd#update()
 	endif
 	unlet s:line
 endfunction
-
-let g:lcd_format = "%B %d %Y"
-let g:lcd_pattern = "[a-zA-Z]\\+ [0-9]\\{1,2\\} [0-9]\\{4\\}"
 
 let g:lcd_loaded = 1
 

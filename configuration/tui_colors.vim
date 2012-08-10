@@ -4,10 +4,10 @@
 "
 " Description:	Custom UI colors for various elements
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 19 2011
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File tui_colors.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:loaded_tui_colors")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 " If colors are not supported
@@ -95,3 +96,4 @@ highlight SpellLocal		ctermfg=magenta		ctermbg=black			cterm=underline
 
 let g:loaded_tui_colors = 1
 
+" vim: set fdm=marker:

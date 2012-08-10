@@ -7,7 +7,7 @@
 " Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File autocmds.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,9 +15,10 @@ endif
 if exists("g:loaded_autocmds")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
-augroup jump_to_last_position
+augroup jump_to_last_position " {{{1
 	autocmd!
 	" When editing a file, always jump to the last known cursor position.
 	" Don't do it when the position is invalid or when inside an event handler
@@ -28,44 +29,45 @@ augroup jump_to_last_position
 				\ if line("'\"") > 1 && line("'\"") <= line("$") |
 				\   exe "normal! g`\"" |
 				\ endif
-augroup END
+augroup END " }}}
 
-augroup html
+augroup html " {{{1
 	autocmd!
 	" Custom matching (< and >)
 	autocmd FileType html set matchpairs=<:>	" Only matching for HTML
 	autocmd FileType php set matchpairs+=<:>	" Add this matching for PHP
-augroup END
+augroup END " }}}
 
-augroup text
+augroup text " {{{1
 	autocmd!
 
 	autocmd FileType txt set spell spelllang=en_us
 	autocmd FileType tex set spell spelllang=en_us
 	autocmd FileType markdown set spell spelllang=en_us
-augroup END
+augroup END " }}}
 
-augroup modeline_guard
+augroup modeline_guard " {{{1
 	autocmd!
 	
 	autocmd BufReadPre *
 				\ if findfile(g:trust_dir . expand('%:p')) != ''	|
 				\	setlocal modeline								|
 				\ endif
-augroup END
+augroup END " }}}
 
-augroup lcd
+augroup lcd " {{{1
 	autocmd!
 
 	autocmd BufWritePre * call lcd#update()
-augroup END
+augroup END " }}}
 
-augroup skeleton
+augroup skeleton " {{{1
 	autocmd!
 
 	autocmd BufNewFIle *.h set filetype=c
 	autocmd BufNewFile * call skeleton#load()
-augroup END
+augroup END " }}}
 
 let g:loaded_autocmds = 1
 
+" vim: set fdm=marker:

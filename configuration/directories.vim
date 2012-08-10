@@ -7,7 +7,7 @@
 " Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File directories.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:loaded_directories")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 " Enable backup
@@ -26,6 +27,8 @@ let s:backup_dir = s:base . '/backup'
 let s:swap_dir = s:base . '/swap'
 let g:trust_dir = g:base_dir . '/trust'
 let g:skeletons_dir = g:base_dir . '/skeletons'
+
+" Check directories {{{1
 
 if finddir(s:base) == ''
 	silent call mkdir(s:base)
@@ -46,14 +49,18 @@ if finddir(g:skeletons_dir) == ''
 	silent call mkdir (g:skeletons_dir)
 endif
 
+" }}}
+
 " Configure backup directory
 let &backupdir = s:backup_dir
 " Configure swap directory
 let &directory = s:swap_dir
 
-" Clean
+" Clean {{{1
 unlet s:backup_dir
 unlet s:swap_dir
+" }}}
 
 let g:loaded_directories = 1
 
+" vim: set fdm=marker:

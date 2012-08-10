@@ -4,10 +4,10 @@
 "
 " Description:	Configuration of syntax highlighting
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	October 10 2011
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File syntax_config.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:loaded_syntax_cfg")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 " std_c configuration
@@ -41,3 +42,4 @@ let c_conditional_is_operator = 1
 
 let g:loaded_syntax_cfg = 1
 
+" vim: set fdm=marker:

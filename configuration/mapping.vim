@@ -4,10 +4,10 @@
 "
 " Description:	User defined mapping
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 19 2011
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File mapping.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:loaded_mapping")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 " Set <leader>
@@ -38,3 +39,4 @@ cmap w!! w !sudo tee >/dev/null %
 
 let g:loaded_mapping = 1
 
+" vim: set fdm=marker:

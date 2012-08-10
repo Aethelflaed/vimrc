@@ -4,10 +4,10 @@
 "
 " Description:	Text configuration, including file format, spell and encoding
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	October 10 2011
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version != 703
 	echoerr "File spell.vim has not been tested on this version (" . v:version . ")"
 endif
@@ -15,6 +15,7 @@ endif
 if exists("g:loaded_spell")
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
 set fileencodings=utf-8,latin1,default
@@ -25,3 +26,4 @@ set spelllang=en_us
 
 let g:loaded_spell = 1
 
+" vim: set fdm=marker:

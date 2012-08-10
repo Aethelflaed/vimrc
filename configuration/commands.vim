@@ -4,10 +4,10 @@
 "
 " Description:	User defined commands
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 19 2011
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
-" Load guard
+" LOAD GUARD {{{1
 if v:version < 703
 	echoerr 'File commands.vim has not been tested on this version (' . v:version . ')'
 endif
@@ -15,8 +15,11 @@ endif
 if exists('g:loaded_commands')
 	finish
 endif
+" }}}
 " -----------------------------------------------------------------------------
 
+" DiffOrig {{{1
+"
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 if !exists(':DiffOrig')
@@ -29,12 +32,18 @@ if !exists(':DiffOrig')
 				\ wincmd p		|
 				\ diffthis
 endif
+" }}}
 
+" RemoveTrailingSpaces {{{1
+"
 " Remove all trailing spaces and spaces before tabs of the file
 if !exists(':RemoveTrailingSpaces')
 	command RemoveTrailingSpaces :%s/\s\+$\| \+\ze\t//g
 endif
+" }}}
 
+" Trust {{{1
+"
 if !exists(':Trust')
 	command Trust
 				\ let b:trust_file = g:trust_dir . expand('%:p')		|
@@ -49,6 +58,8 @@ if !exists(':Trust')
 				\	echo 'File already trusted'							|
 				\ endif
 endif
+" }}}
 
 let g:loaded_commands = 1
 
+" vim: set fdm=marker:
