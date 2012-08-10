@@ -4,7 +4,7 @@
 "
 " Description:	User defined auto commands
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 09 2012
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
 " Load guard
@@ -63,6 +63,7 @@ augroup END
 augroup skeleton
 	autocmd!
 
+	autocmd BufNewFIle *.h set filetype=c
 	autocmd BufNewFile * call skeleton#load()
 augroup END
 
