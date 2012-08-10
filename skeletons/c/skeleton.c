@@ -10,4 +10,3 @@
 #include "${filename}.h"
 
 ${cursor}
-
