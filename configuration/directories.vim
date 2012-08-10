@@ -4,7 +4,7 @@
 "
 " Description:	Directories configuration and initialization
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 09 2012
+" Last Change:	August 10 2012
 
 " -----------------------------------------------------------------------------
 " Load guard
@@ -47,9 +47,9 @@ if finddir(g:skeletons_dir) == ''
 endif
 
 " Configure backup directory
-set backupdir=$HOME/.vim/backup
+let &backupdir = s:backup_dir
 " Configure swap directory
-set directory=$HOME/.vim/swap
+let &directory = s:swap_dir
 
 " Clean
 unlet s:backup_dir
