@@ -35,8 +35,10 @@ function! skeleton#cpp#load()
 				call skeleton#read(file)
 				setlocal nomodified
 				silent execute ':vsp ' . name . '.hpp'
-				call skeleton#cpp#load()
 				set ft=cpp
+				if findfile(expand('%:p:h') . '/' . name . '.hpp') == ''
+					call skeleton#cpp#load()
+				endif
 				let &cmdheight = cmdheight
 				return
 			endif
