@@ -44,6 +44,9 @@ source <sfile>:h/configuration/syntax_config.vim
 " Text 
 source <sfile>:h/configuration/text.vim
 
+" Plugins
+source <sfile>:h/configuration/plugins.vim
+
 " see thesaurus
 " see omnifunc
 " see insert-index

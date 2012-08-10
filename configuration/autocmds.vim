@@ -61,14 +61,6 @@ augroup lcd " {{{1
 	autocmd BufWritePre * call lcd#update()
 augroup END " }}}
 
-augroup skeleton " {{{1
-	autocmd!
-
-	autocmd BufNewFIle *.h set filetype=c
-	autocmd BufNewFIle *.tex set filetype=tex
-	autocmd BufNewFile * call skeleton#load()
-augroup END " }}}
-
 let g:loaded_autocmds = 1
 
 " vim: set fdm=marker:

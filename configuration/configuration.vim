@@ -22,12 +22,6 @@ endif
 set runtimepath=$HOME/.vim,$HOME/.vim/ruby,$HOME/.vim/treetop,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 
 " -----------------------------------------------------------------------------
-" Identity
-" -----------------------------------------------------------------------------
-
-let g:skeleton_author = 'Geoffroy Planquart <geoffroy@aethelflaed.com>'
-
-" -----------------------------------------------------------------------------
 " Editor
 " -----------------------------------------------------------------------------
 

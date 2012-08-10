@@ -26,6 +26,23 @@ endif
 
 " }}}1
 
+function! skeleton#enable()
+	call skeleton#disable()
+
+	augroup skeleton
+		autocmd!
+
+		autocmd BufNewFile * call skeleton#load()
+	augroup END
+
+endfunction
+
+function! skeleton#disable()
+	augroup skeleton
+		autocmd!
+	augroup END
+endfunction
+
 function! skeleton#load()
 	let type = &ft
 	let name = expand('%')
