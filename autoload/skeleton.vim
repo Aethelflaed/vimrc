@@ -68,6 +68,17 @@ function! skeleton#template()
 	call setpos('.', [0, cur[0], cur[1]])
 endfunction
 
+function! skeleton#read(file)
+	if findfile(a:file) != ''
+		try
+			execute '0r ' . a:file
+			call skeleton#template()
+		catch /.*/
+			return
+		endtry
+	endif
+endfunction
+
 function! skeleton#load()
 	let type = &ft
 	let name = expand('%')
@@ -77,20 +88,9 @@ function! skeleton#load()
 
 	execute 'runtime! autoload/skeleton/' . type . '.vim'
 	if exists('*skeleton#' . type . '#load')
-		execute 'call skeleton#c#load()'
+		execute 'call skeleton#' . type . '#load()'
 	else
 		call skeleton#read(file)
-	endif
-endfunction
-
-function! skeleton#read(file)
-	if findfile(a:file) != ''
-		try
-			execute '0r ' . a:file
-			call skeleton#template()
-		catch /.*/
-			return
-		endtry
 	endif
 endfunction
 
