@@ -22,17 +22,12 @@ endif
 set backup
 
 " Check backup & swap directories
-let s:base = $HOME . '/.vim'
-let s:backup_dir = s:base . '/backup'
-let s:swap_dir = s:base . '/swap'
-let g:trust_dir = g:base_dir . '/trust'
+let s:backup_dir = g:base_dir . '/backup'
+let s:swap_dir = g:base_dir . '/swap'
 let g:skeletons_dir = g:base_dir . '/skeletons'
 
 " Check directories {{{1
 
-if finddir(s:base) == ''
-	silent call mkdir(s:base)
-endif
 if finddir(g:base_dir) == ''
     silent call mkdir(g:base_dir)
 endif
@@ -41,9 +36,6 @@ if finddir(s:backup_dir) == ''
 endif
 if finddir(s:swap_dir) == ''
     silent call mkdir(s:swap_dir)
-endif
-if finddir(g:trust_dir) == ''
-	silent call mkdir (g:trust_dir)
 endif
 if finddir(g:skeletons_dir) == ''
 	silent call mkdir (g:skeletons_dir)

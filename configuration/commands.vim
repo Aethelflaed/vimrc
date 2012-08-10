@@ -45,18 +45,7 @@ endif
 " Trust {{{1
 "
 if !exists(':Trust')
-	command Trust
-				\ let b:trust_file = g:trust_dir . expand('%:p')		|
-				\ let b:trust_file_dir = g:trust_dir . expand('%:p:h')	|
-				\ if findfile(b:trust_file) == ''						|
-				\	if finddir(b:trust_file_dir) == ''					|
-				\		silent call mkdir(b:trust_file_dir, 'p')		|
-				\	endif												|
-				\	call writefile(['trusted'], b:trust_file)			|
-				\	echo 'File now trusted. modeline effective !'		|
-				\ else													|
-				\	echo 'File already trusted'							|
-				\ endif
+	command Trust call modeline_guard#trust()
 endif
 " }}}
 

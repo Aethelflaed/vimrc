@@ -23,6 +23,9 @@ call skeleton#enable()
 
 call lcd#enable()
 
+let g:modeline_guard_trust_dir = g:base_dir . '/trust'
+call modeline_guard#enable()
+
 let g:loaded_plugins = 1
 
 " vim: set fdm=marker:

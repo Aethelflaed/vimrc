@@ -46,15 +46,6 @@ augroup text " {{{1
 	autocmd FileType markdown set spell spelllang=en_us
 augroup END " }}}
 
-augroup modeline_guard " {{{1
-	autocmd!
-	
-	autocmd BufReadPre *
-				\ if findfile(g:trust_dir . expand('%:p')) != ''	|
-				\	setlocal modeline								|
-				\ endif
-augroup END " }}}
-
 let g:loaded_autocmds = 1
 
 " vim: set fdm=marker:

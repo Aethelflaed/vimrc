@@ -9,7 +9,7 @@
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
 if v:version != 703
-	echoerr "File autocmds.vim has not been tested on this version (" . v:version . ")"
+	echoerr "File lcd.vim has not been tested on this version (" . v:version . ")"
 endif
 " Prevents file from being included more than once
 if exists("g:lcd_loaded")
