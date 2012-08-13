@@ -2,8 +2,30 @@ ${header}
 
 \documentclass{frletter}
 
-${cursor}
+\usepackage[french]{babel}
+
+\name{${tex_author}}		% To be used for the return address on the envelope
+\signature{${tex_author}}	% Goes after the closing (ie at the end of the letter,
+							% with space for a signature)
+\address{${tex_author}\\${tex_address}}
+
+%\makelabels				% this command prints envelope labels on the final 
+							% page of the document
 
 \begin{document}
+\begin{letter}{${cursor}}	% Receiver address
 
+% Optionnaly specialize date field
+%\renewcommand{\today}{\`A Strasbourg, le 13 ao\^ut 2012}
+
+\opening{Dead,}
+
+
+\closing{Regards,}
+
+%\cc{}		% people this letter is cc-ed to
+%\encl{}	% list of anything enclosed
+%\ps{}		% any post scriptums. ``PS'' labels must be put in manually
+
+\end{letter}
 \end{document}

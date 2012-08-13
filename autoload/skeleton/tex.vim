@@ -4,7 +4,7 @@
 "
 " Description:	Specialize skeleton for (la)tex language
 " Author:		Geoffroy Planquart <geoffroy@aethelflaed.com>
-" Last Change:	August 10 2012
+" Last Change:	August 13 2012
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -18,6 +18,24 @@ endif
 " }}}
 " -----------------------------------------------------------------------------
 
+" Make sure skeleton.vim is loaded
+
+if !exists('g:skeleton_loaded')
+	runtime! autoload/skeleton.vim
+endif
+
+" CONFIGURATION {{{1
+
+if !exists('g:skeleton_tex_author')
+	let g:skeleton_tex_author = g:skeleton_author
+endif
+
+if !exists('g:skeleton_tex_address')
+	let g:skeleton_tex_address = ''
+endif
+
+" }}}
+
 function! skeleton#tex#load()
 	let name = expand('%:t:r')
 
@@ -30,7 +48,9 @@ function! skeleton#tex#load()
 endfunction
 
 function! skeleton#tex#template()
-	call skeleton#replace('${header}', g:skeleton_tex_header, '')
+	call skeleton#replace('${header}', s:skeleton_tex_header, '')
+	call skeleton#replace('${tex_author}', g:skeleton_tex_author, 'g')
+	call skeleton#replace('${tex_address}', g:skeleton_tex_address, 'g')
 
 	execute ':%s/<CR>/\r/g'
 endfunction
@@ -65,7 +85,7 @@ function! skeleton#tex#letter()
 	return letter
 endfunction
 
-let g:skeleton_tex_header =
+let s:skeleton_tex_header =
 			\ '% ${Filename}<CR>' .
 			\ '%<CR>' .
 			\ '% Author:		${author}<CR>' .

@@ -15,7 +15,7 @@ endif
 if exists("g:skeleton_loaded")
 	finish
 endif
-" }}}1
+" }}}
 " -----------------------------------------------------------------------------
 
 " CONFIGURATION {{{1
@@ -28,7 +28,7 @@ if !exists('g:skeleton_dir')
 	let g:skeleton_dir = $HOME . '/.vim/skeletons'
 endif
 
-" }}}1
+" }}}
 
 function! skeleton#enable()
 	call skeleton#disable()

@@ -4,7 +4,7 @@
 "
 " Description:	Plugin loader and configuration
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 10 2012
+" Last Change:	August 13 2012
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -20,6 +20,8 @@ endif
 
 let g:skeleton_author = 'Geoffroy Planquart <geoffroy@aethelflaed.com>'
 let g:skeleton_dir = g:base_dir . '/skeletons'
+let g:skeleton_tex_author = 'Geoffroy \\bsc{Planquart}'
+let g:skeleton_tex_address = '3 rue du Tribunal\\\\67300 \\bsc{Schiltigheim}'
 call skeleton#enable()
 
 call lcd#enable()
