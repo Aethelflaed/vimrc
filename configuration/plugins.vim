@@ -4,7 +4,7 @@
 "
 " Description:	Plugin loader and configuration
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 13 2012
+" Last Change:	September 20 2012
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -28,6 +28,8 @@ call lcd#enable()
 
 let g:modeline_guard_trust_dir = g:base_dir . '/trust'
 call modeline_guard#enable()
+
+call encrypted#enable()
 
 let g:loaded_plugins = 1
 
