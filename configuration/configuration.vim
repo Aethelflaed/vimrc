@@ -61,6 +61,12 @@ set tildeop
 " Character used in list mode
 set listchars=eol:$,tab:>-,trail:.,extends:>,conceal:+,nbsp:.
 
+" Enable syntax highlighting
+syntax enable
+
+" Set color scheme
+colorscheme desert256
+
 " -----------------------------------------------------------------------------
 " Text folding
 " -----------------------------------------------------------------------------

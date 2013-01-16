@@ -4,7 +4,7 @@
 "
 " Description:	Central configuration of vim, loaded from .vimrc
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 10 2012
+" Last Change:	January 16 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -28,9 +28,6 @@ let g:base_dir = expand("<sfile>:h")
 
 " Configure backup
 source <sfile>:h/configuration/directories.vim
-
-" Load TUI colors customization
-source <sfile>:h/configuration/tui_colors.vim
 
 " If mouse is available, enable it
 " and set same behavior as xterm
