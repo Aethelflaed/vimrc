@@ -4,7 +4,7 @@
 "
 " Description:	Custom UI colors for various elements
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 10 2012
+" Last Change:	January 16 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -22,9 +22,6 @@ endif
 if &t_Co <= 2 && !has("gui_running")
 	finish
 endif
-
-" Highlight last search terms
-set hlsearch
 
 " Enable syntax highlighting
 syntax enable

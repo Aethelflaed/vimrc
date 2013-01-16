@@ -84,6 +84,7 @@ set smarttab
 " Search
 " -----------------------------------------------------------------------------
 
+set hlsearch		" Highlight last search terms
 set incsearch		" Do incremental searching
 set showmatch		" Show matching pattern
 set matchtime=0		" 0 seconds to show the matching pattern
