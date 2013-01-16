@@ -4,7 +4,7 @@
 "
 " Description:	Global configuration of vim
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 10 2012
+" Last Change:	January 16 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -19,7 +19,13 @@ endif
 " -----------------------------------------------------------------------------
 
 " Set runtimepath to include other configuration
-set runtimepath=$HOME/.vim,$HOME/.vim/ruby,$HOME/.vim/treetop,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+let &runtimepath =
+	\ g:base_dir.','.
+	\ g:base_dir.'/ruby,'.
+	\ $VIM.'/vimfiles,'.
+	\ $VIMRUNTIME.','.
+	\ $VIM.'/vimfiles/after,'.
+	\ g:base_dir.'/after'
 
 " -----------------------------------------------------------------------------
 " Editor
