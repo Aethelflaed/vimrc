@@ -1,14 +1,14 @@
 /**
- * ${Filename}
+ * ${filename}
  * Author:		${author}
  * Created:		${date}
  * Last Change:	${date}
  */
 
-#ifndef _${FILENAME}_HPP
-#define _${FILENAME}_HPP
+#ifndef __${FILENAME}_HPP
+#define +_${FILENAME}_HPP
 
-class ${Filename}
+class ${filename}
 {
 	public:
 		${cursor}
@@ -16,5 +16,5 @@ class ${Filename}
 
 };
 
-#endif /* _${FILENAME}_HPP */
+#endif /* __${FILENAME}_HPP */
 

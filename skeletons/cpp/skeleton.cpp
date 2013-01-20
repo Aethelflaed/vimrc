@@ -1,5 +1,5 @@
 /**
- * ${Filename}
+ * ${filename}
  * Author:		${author}
  * Created:		${date}
  * Last Change:	${date}
