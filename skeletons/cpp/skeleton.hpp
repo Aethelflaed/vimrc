@@ -6,7 +6,7 @@
  */
 
 #ifndef __${FILENAME}_HPP
-#define +_${FILENAME}_HPP
+#define __${FILENAME}_HPP
 
 class ${filename}
 {
