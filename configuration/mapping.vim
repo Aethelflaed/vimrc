@@ -29,7 +29,7 @@ nmap <silent> <leader>N :set hlsearch<CR>
 nmap <silent> <leader>l :set list!<CR>
 
 " Update quick fix windows
-nmap <silent> <leader>r :call g:ClangUpdateQuickFix()
+nmap <silent> <leader>r :call g:ClangUpdateQuickFix()<CR>
 
 " Auto-select first item in popup completion menu
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
