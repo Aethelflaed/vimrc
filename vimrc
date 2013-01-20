@@ -4,7 +4,7 @@
 "
 " Description:	Central configuration of vim, loaded from .vimrc
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	January 16 2013
+" Last Change:	January 20 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -46,6 +46,9 @@ else
 	set autoindent " always set autoindenting on
 endif
 
+" Plugins
+source <sfile>:h/configuration/plugins.vim
+
 " Load other commands
 source <sfile>:h/configuration/commands.vim
 
@@ -60,9 +63,6 @@ source <sfile>:h/configuration/syntax_config.vim
 
 " Text 
 source <sfile>:h/configuration/text.vim
-
-" Plugins
-source <sfile>:h/configuration/plugins.vim
 
 " see thesaurus
 " see omnifunc

@@ -4,7 +4,7 @@
 "
 " Description:	User defined mapping
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	August 10 2012
+" Last Change:	January 20 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -27,6 +27,9 @@ nmap <silent> <leader>N :set hlsearch<CR>
 
 " Toggle visible whitespace
 nmap <silent> <leader>l :set list!<CR>
+
+" Update quick fix windows
+nmap <silent> <leader>r :call g:ClangUpdateQuickFix()
 
 " Auto-select first item in popup completion menu
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
