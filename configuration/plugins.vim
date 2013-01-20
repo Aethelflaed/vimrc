@@ -4,7 +4,7 @@
 "
 " Description:	Plugin loader and configuration
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	September 20 2012
+" Last Change:	January 20 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -18,11 +18,21 @@ endif
 " }}}
 " -----------------------------------------------------------------------------
 
+
+" skeleton {{{1
 let g:skeleton_author = 'Geoffroy Planquart <geoffroy@aethelflaed.com>'
 let g:skeleton_dir = g:base_dir . '/skeletons'
 let g:skeleton_tex_author = 'Geoffroy \\bsc{Planquart}'
 let g:skeleton_tex_address = '3 rue du Tribunal\\\\67300 \\bsc{Schiltigheim}'
 call skeleton#enable()
+"}}}
+
+" clang_complete {{{1
+let g:clang_auto_select = 1
+let g:clang_complete_copen = 1
+let g:clang_snippets = 1
+let g:clang_user_options = '--std=c++11'
+" }}}
 
 call lcd#enable()
 
