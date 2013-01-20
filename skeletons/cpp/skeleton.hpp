@@ -17,4 +17,3 @@ class ${filename}
 };
 
 #endif /* __${FILENAME}_HPP */
-

@@ -11,4 +11,3 @@
 ${cursor}
 
 #endif /* _${FILENAME}_H */
-
