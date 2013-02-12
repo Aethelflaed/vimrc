@@ -20,21 +20,44 @@ endif
 " -----------------------------------------------------------------------------
 
 function! code_style#allman#enable()
-	call <SID>parenthese()
-	call <SID>brace()
+	let cursor = getpos('.')
+
+	call <SID>clean_eol()
+	call <SID>parentheses()
+	call <SID>braces()
+
+	call <SID>whitespaces()
+
+	normal gg=G
+	call setpos('.', cursor)
 endfunction
 
 " LOCAL FUNCTIONS {{{1
 
+function s:whitespaces()
+	if search('\s\+$\| \+\ze\t', 'nwc') > 0
+		%s/\s\+$\| \+\ze\t//g
+	endif
+endfunction
+
+function s:clean_eol()
+	if search('\r\n', 'nwc') > 0
+		%s/\r\n/\r/g
+	endif
+	if search('', 'nwc') > 0
+		%s///g
+	endif
+endfunction
+
 " Remove the whitespaces between a name and a parenthese
-function s:parenthese()
+function s:parentheses()
 	if search('\(\w\)\s\+(', 'nwc') > 0
 		%s/\(\w\)\s\+(/\1(/g
 	endif
 endfunction
 
 " If a brace is after a name, remove eventual whitespaces and skip a line
-function s:brace()
+function s:braces()
 	if search('\S\s*{\s*$', 'nwc') > 0
 		%s/\(\S\)\s*{\s*$/\1\r{/g
 	endif
