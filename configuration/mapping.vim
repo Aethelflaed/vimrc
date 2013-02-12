@@ -4,7 +4,7 @@
 "
 " Description:	User defined mapping
 " Author:		Geoffroy PLANQUART <geoffroy@planquart.fr>
-" Last Change:	January 20 2013
+" Last Change:	February 12 2013
 
 " -----------------------------------------------------------------------------
 " LOAD GUARD {{{1
@@ -30,6 +30,8 @@ nmap <silent> <leader>l :set list!<CR>
 
 " Update quick fix windows
 nmap <silent> <leader>r :call g:ClangUpdateQuickFix()<CR>
+
+nmap <silent> <leader>f :call code_style#allman#enable()<CR>
 
 " Auto-select first item in popup completion menu
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
