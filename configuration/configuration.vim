@@ -33,6 +33,10 @@ let &runtimepath =
 " Set term title to current file title
 set title
 
+" Always show the tab line
+set showtabline=2
+set tabpagemax=10
+
 " Show line number
 set number
 " Show the cursor position all the time
