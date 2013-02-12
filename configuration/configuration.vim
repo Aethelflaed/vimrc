@@ -37,6 +37,9 @@ set title
 set showtabline=2
 set tabpagemax=10
 
+" Set fileformats to try
+set fileformats=unix,dos
+
 " Show line number
 set number
 " Show the cursor position all the time
